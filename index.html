@@ -20,46 +20,7 @@
 
 
 
-<script>
-  function calculate(input) {
-    // parse the input as a mathematical expression
-    const result = eval(input);
+<script src="bot.js"></script>
 
-    // return the result as a string
-    return result.toString();
-  }
-
-  const form = document.getElementById('chat-form');
-  const input = document.getElementById('chat-input');
-  const messagesContainer = document.getElementById('messages-container');
-
-  form.addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    // get user input and clear the input field
-    const userInput = input.value;
-    input.value = '';
-
-    // create a new message element for the user's input
-    const userMessage = document.createElement('div');
-    userMessage.classList.add('message', 'user', 'right');
-    userMessage.textContent = userInput;
-
-    // append the user message to the messages container
-    messagesContainer.appendChild(userMessage);
-
-    // calculate the result and create a new message element for it
-    const result = calculate(userInput);
-    const botMessage = document.createElement('div');
-    botMessage.classList.add('message', 'bot');
-    botMessage.textContent = result;
-
-    // append the bot message to the messages container
-    messagesContainer.appendChild(botMessage);
-
-    // scroll to the bottom of the messages container
-    messagesContainer.scrollTop = messagesContainer.scrollHeight;
-  });
-</script>
       </body>
       </html>
